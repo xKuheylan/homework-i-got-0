@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+void cTitle(); 
+
+int main() {
+
+	double num1, num2;
+	char opr; // operatör için
+	string rsl = "Result : "; // En küçük kod için
+
+	cTitle();
+
+	for (int i = 0; i < 47; ++i) { // en azından durmasın
+
+		cout << "Enter : ";
+		cin >> num1 >> opr >> num2;
+
+			switch (opr) {
+			case '+':
+				cout << rsl << num1 << " + " << num2 << " = " << num1 + num2 << endl << endl;
+				break;
+			case '-':
+				cout << rsl << num1 << " - " << num2 << " = " << num1 - num2 << endl << endl;
+				break;
+			case '*':
+				cout << rsl << num1 << " * " << num2 << " = " << num1 * num2 << endl << endl;
+				break;
+			case '/':
+				if (num2 != 0) {
+					cout << rsl << num1 << " / " << num2 << " = " << num1 / num2  << endl << endl;
+				}
+				else {
+					cout << "Error,undefined!" << endl;
+				}
+				break;
+			default:
+				cout << "Wrong operator!" << endl << endl;     
+			}
+	
+	}
+
+	return 0;
+}
+
+void cTitle() {
+	cout << "\t\t\t\t\t    Basic Calculation Machine\n\t\t\t\t\t    (Works with just NUMBERS)" << endl;
+}
